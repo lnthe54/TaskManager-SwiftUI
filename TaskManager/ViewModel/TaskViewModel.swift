@@ -19,3 +19,30 @@ class TaskViewModel: ObservableObject {
     @Published var taskType: String = "Basic"
 }
 
+enum ColorTask: String {
+    case yellow = "Yellow"
+    case green = "Green"
+    case blue = "Blue"
+    case purple = "Purple"
+    case red = "Red"
+    case orange = "Orange"
+    
+    func getColor() -> UIColor {
+        switch self {
+        case .yellow:
+            return .yellow
+        case .green:
+            return .green
+        case .blue:
+            return .blue
+        case .purple:
+            return .purple
+        case .red:
+            return .red
+        case .orange:
+            return .orange
+        }
+    }
+}
+
+

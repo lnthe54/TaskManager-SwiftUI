@@ -35,7 +35,8 @@ struct Home: View {
             // MARK: Add Button
             
             Button {
-                // Do something
+                // Open edit task screen
+                taskModel.openEditTask.toggle()
             } label: {
                 Label {
                     Text("Add Task")
@@ -62,7 +63,10 @@ struct Home: View {
             }
             
         }
-        
+        .fullScreenCover(isPresented: $taskModel.openEditTask) {
+            AddTask()
+                .environmentObject(taskModel)
+        }
     }
     
     // MARK: Custom Segmented
